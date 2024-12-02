@@ -1,0 +1,71 @@
+"use client"
+import { FaList } from 'react-icons/fa6'
+import Logo from '../Logo'
+import ThemeController from '../ThemeController'
+import navigation from './NavigationData'
+import NavItem from './NavItem'
+import { useRef } from 'react'
+
+// Drawer component for mobile view
+const Drawer = () => {
+    const drawerRef = useRef<HTMLInputElement>(null);
+
+    const closeDrawer = () => {
+        if (drawerRef.current) {
+            drawerRef.current.checked = false;
+        }
+    };
+
+    return (
+        <div className="drawer">
+            <input ref={drawerRef} id="my-drawer" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content">
+                <label htmlFor="my-drawer" className="btn btn-ghost btn-circle">
+                    <FaList />
+                </label>
+            </div>
+            <div className="drawer-side">
+                <label htmlFor="my-drawer" className="drawer-overlay"></label>
+                <ul className="flex flex-col items-start justify-start p-4 w-80 h-full bg-base-100">
+                    <Logo />
+                    {navigation.map(navItem => (
+                        <NavItem
+                            key={navItem.href}
+                            href={navItem.href}
+                            label={navItem.label}
+                            icon={navItem.icon}
+                            className="text-left"
+                            onClick={closeDrawer}
+                        />
+                    ))}
+                </ul>
+            </div>
+        </div>
+    );
+}
+
+// Navbar component
+function Navbar() {
+    return (
+        <div className="sticky z-10 top-0 left-0 navbar bg-base-100 bg-opacity-60 backdrop-blur-md backdrop-saturate-150 shadow-lg">
+            <div className="navbar-start lg:hidden">
+                <Drawer />
+            </div>
+            <div className="navbar-start hidden lg:flex">
+                <Logo />
+            </div>
+            <div className="navbar-center hidden md:flex">
+                {
+                    navigation.map(navItem => (
+                        <NavItem className="mr-4" href={navItem.href} key={navItem.href} label={navItem.label} icon={navItem.icon} />
+                    ))
+                }
+            </div>
+            <div className="navbar-end">
+                <ThemeController />
+            </div>
+        </div>
+    )
+}
+
+export default Navbar

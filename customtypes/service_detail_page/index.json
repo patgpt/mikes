@@ -1,0 +1,133 @@
+{
+  "format": "page",
+  "id": "service_detail_page",
+  "label": "Service Detail Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "service_title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "service_title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "heading2"
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "label": "hero_image",
+          "constraint": {
+            "width": 1600,
+            "height": 900
+          },
+          "thumbnails": []
+        }
+      },
+      "introduction": {
+        "type": "StructuredText",
+        "config": {
+          "label": "introduction",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "service_details": {
+        "type": "StructuredText",
+        "config": {
+          "label": "service_details",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "gallery": {
+        "type": "Group",
+        "config": {
+          "label": "Gallery",
+          "repeat": true,
+          "fields": {
+            "gallery_item": {
+              "type": "Image",
+              "config": {
+                "label": "gallery_item",
+                "constraint": {
+                  "width": 300,
+                  "height": 300
+                },
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "testimonials": {
+        "type": "Group",
+        "config": {
+          "label": "testimonials",
+          "repeat": true,
+          "fields": {
+            "client_name": {
+              "type": "StructuredText",
+              "config": {
+                "label": "client name",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "testimonial_text": {
+              "type": "StructuredText",
+              "config": {
+                "label": "testimonial_text",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,em,strong"
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    },
+    "SEO": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": ""
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": ""
+        }
+      },
+      "meta_image": {
+        "type": "Image",
+        "config": {
+          "label": "Meta Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}
