@@ -2,6 +2,7 @@ import Footer from '@/components/Footer'
 import Navbar from '@/components/navigation/Navbar'
 import clsx from 'clsx'
 import type {Metadata} from 'next'
+import {Providers} from './providers'
 
 import './globals.css'
 import {fontSans, fontSerif, fontDisplay} from '@/app/fonts'
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body
         className={clsx(
           fontSans.variable,
@@ -27,9 +28,11 @@ export default function RootLayout({
           'bg-base-100',
           'min-h-screen'
         )}>
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
