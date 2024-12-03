@@ -14,9 +14,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["GeistVF", "ui-sans-serif", "system-ui"],
-        mono: ["GeistMonoVF", "ui-monospace", "SFMono-Regular"],
-        display: ["Lobster", "ui-serif"],
+        serif: ['var(--font-serif)', 'ui-serif'],
+        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui'],
+        display: ['var(--font-display)', 'ui-serif'],
       },
       colors: {
         background: "var(--background)",

@@ -102,6 +102,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "service_content_section": {
+              "type": "SharedSlice"
+            },
+            "service_call_to_action": {
+              "type": "SharedSlice"
+            },
             "frequently_asked_questions": {
               "type": "SharedSlice"
             }
