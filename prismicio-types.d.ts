@@ -116,7 +116,10 @@ export interface ServiceDetailPageDocumentDataTestimonialsItem {
   testimonial_text: prismic.RichTextField;
 }
 
-type ServiceDetailPageDocumentDataSlicesSlice = FrequentlyAskedQuestionsSlice;
+type ServiceDetailPageDocumentDataSlicesSlice =
+  | ServiceContentSectionSlice
+  | ServiceCallToActionSlice
+  | FrequentlyAskedQuestionsSlice;
 
 /**
  * Content for Service Detail Page documents
@@ -557,6 +560,337 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *ServiceCallToAction → Default → Primary*
+ */
+export interface ServiceCallToActionSliceDefaultPrimary {
+  /**
+   * Headline field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_call_to_action.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * subheadline field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Supporting text or a brief description
+   * - **API ID Path**: service_call_to_action.default.primary.subheadline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subheadline: prismic.RichTextField;
+
+  /**
+   * Phone field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_call_to_action.default.primary.phone_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_number: prismic.KeyTextField;
+
+  /**
+   * Email field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_call_to_action.default.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Link field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: To contact page
+   * - **API ID Path**: service_call_to_action.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Alignment field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_call_to_action.default.primary.alignment
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  alignment: prismic.SelectField<"Left" | "Right" | "Center">;
+
+  /**
+   * Background Image field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_call_to_action.default.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+
+  /**
+   * Background Color field in *ServiceCallToAction → Default → Primary*
+   *
+   * - **Field Type**: Color
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_call_to_action.default.primary.background_color
+   * - **Documentation**: https://prismic.io/docs/field#color
+   */
+  background_color: prismic.ColorField;
+}
+
+/**
+ * Default variation for ServiceCallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceCallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceCallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiceCallToAction*
+ */
+type ServiceCallToActionSliceVariation = ServiceCallToActionSliceDefault;
+
+/**
+ * ServiceCallToAction Shared Slice
+ *
+ * - **API ID**: `service_call_to_action`
+ * - **Description**: ServiceCallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceCallToActionSlice = prismic.SharedSlice<
+  "service_call_to_action",
+  ServiceCallToActionSliceVariation
+>;
+
+/**
+ * Primary content in *ServiceContentSection → Default → Primary*
+ */
+export interface ServiceContentSectionSliceDefaultPrimary {
+  /**
+   * Section Title field in *ServiceContentSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.default.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+
+  /**
+   * Section Content field in *ServiceContentSection → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.default.primary.section_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_content: prismic.RichTextField;
+
+  /**
+   * SectionImage field in *ServiceContentSection → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.default.primary.sectionimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  sectionimage: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ServiceContentSection Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceContentSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceContentSectionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *ServiceContentSection → Dark Background → Primary*
+ */
+export interface ServiceContentSectionSliceDarkBackgroundPrimary {
+  /**
+   * Section Title field in *ServiceContentSection → Dark Background → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.darkBackground.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+
+  /**
+   * Section Content field in *ServiceContentSection → Dark Background → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.darkBackground.primary.section_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_content: prismic.RichTextField;
+
+  /**
+   * SectionImage field in *ServiceContentSection → Dark Background → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.darkBackground.primary.sectionimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  sectionimage: prismic.ImageField<never>;
+}
+
+/**
+ * Dark Background variation for ServiceContentSection Slice
+ *
+ * - **API ID**: `darkBackground`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceContentSectionSliceDarkBackground =
+  prismic.SharedSliceVariation<
+    "darkBackground",
+    Simplify<ServiceContentSectionSliceDarkBackgroundPrimary>,
+    never
+  >;
+
+/**
+ * Primary content in *ServiceContentSection → Image left - Dark → Primary*
+ */
+export interface ServiceContentSectionSliceImageLeftDarkPrimary {
+  /**
+   * Section Title field in *ServiceContentSection → Image left - Dark → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageLeftDark.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+
+  /**
+   * Section Content field in *ServiceContentSection → Image left - Dark → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageLeftDark.primary.section_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_content: prismic.RichTextField;
+
+  /**
+   * SectionImage field in *ServiceContentSection → Image left - Dark → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageLeftDark.primary.sectionimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  sectionimage: prismic.ImageField<never>;
+}
+
+/**
+ * Image left - Dark variation for ServiceContentSection Slice
+ *
+ * - **API ID**: `imageLeftDark`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceContentSectionSliceImageLeftDark =
+  prismic.SharedSliceVariation<
+    "imageLeftDark",
+    Simplify<ServiceContentSectionSliceImageLeftDarkPrimary>,
+    never
+  >;
+
+/**
+ * Primary content in *ServiceContentSection → Image Right - Light → Primary*
+ */
+export interface ServiceContentSectionSliceImageRightLightPrimary {
+  /**
+   * Section Title field in *ServiceContentSection → Image Right - Light → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageRightLight.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+
+  /**
+   * Section Content field in *ServiceContentSection → Image Right - Light → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageRightLight.primary.section_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_content: prismic.RichTextField;
+
+  /**
+   * SectionImage field in *ServiceContentSection → Image Right - Light → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageRightLight.primary.sectionimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  sectionimage: prismic.ImageField<never>;
+}
+
+/**
+ * Image Right - Light variation for ServiceContentSection Slice
+ *
+ * - **API ID**: `imageRightLight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceContentSectionSliceImageRightLight =
+  prismic.SharedSliceVariation<
+    "imageRightLight",
+    Simplify<ServiceContentSectionSliceImageRightLightPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *ServiceContentSection*
+ */
+type ServiceContentSectionSliceVariation =
+  | ServiceContentSectionSliceDefault
+  | ServiceContentSectionSliceDarkBackground
+  | ServiceContentSectionSliceImageLeftDark
+  | ServiceContentSectionSliceImageRightLight;
+
+/**
+ * ServiceContentSection Shared Slice
+ *
+ * - **API ID**: `service_content_section`
+ * - **Description**: ServiceContentSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceContentSectionSlice = prismic.SharedSlice<
+  "service_content_section",
+  ServiceContentSectionSliceVariation
+>;
+
+/**
  * Item in *ServicesOverview → Default → Primary → Services*
  */
 export interface ServicesOverviewSliceDefaultPrimaryServicesItem {
@@ -701,6 +1035,20 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      ServiceCallToActionSlice,
+      ServiceCallToActionSliceDefaultPrimary,
+      ServiceCallToActionSliceVariation,
+      ServiceCallToActionSliceDefault,
+      ServiceContentSectionSlice,
+      ServiceContentSectionSliceDefaultPrimary,
+      ServiceContentSectionSliceDarkBackgroundPrimary,
+      ServiceContentSectionSliceImageLeftDarkPrimary,
+      ServiceContentSectionSliceImageRightLightPrimary,
+      ServiceContentSectionSliceVariation,
+      ServiceContentSectionSliceDefault,
+      ServiceContentSectionSliceDarkBackground,
+      ServiceContentSectionSliceImageLeftDark,
+      ServiceContentSectionSliceImageRightLight,
       ServicesOverviewSlice,
       ServicesOverviewSliceDefaultPrimaryServicesItem,
       ServicesOverviewSliceDefaultPrimary,
