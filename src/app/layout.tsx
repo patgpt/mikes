@@ -1,11 +1,10 @@
+import Footer from "@/components/Footer";
+import Navbar from "@/components/navigation/Navbar";
+import clsx from "clsx";
 import type { Metadata } from "next";
+import { Lobster } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Lobster } from "next/font/google";
-import clsx from "clsx";
-import Link from "next/link";
-import Navbar from "@/components/navigation/Navbar";
-import Footer from "@/components/Footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -20,6 +19,7 @@ const geistMono = localFont({
 const fontDisplay = Lobster({
   variable: "--font-display",
   weight: "400",
+  subsets: ['latin']
 });
 
 export const metadata: Metadata = {
