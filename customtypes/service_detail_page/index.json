@@ -41,62 +41,6 @@
           "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "service_details": {
-        "type": "StructuredText",
-        "config": {
-          "label": "service_details",
-          "placeholder": "",
-          "allowTargetBlank": true,
-          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-        }
-      },
-      "gallery": {
-        "type": "Group",
-        "config": {
-          "label": "Gallery",
-          "repeat": true,
-          "fields": {
-            "gallery_item": {
-              "type": "Image",
-              "config": {
-                "label": "gallery_item",
-                "constraint": {
-                  "width": 300,
-                  "height": 300
-                },
-                "thumbnails": []
-              }
-            }
-          }
-        }
-      },
-      "testimonials": {
-        "type": "Group",
-        "config": {
-          "label": "testimonials",
-          "repeat": true,
-          "fields": {
-            "client_name": {
-              "type": "StructuredText",
-              "config": {
-                "label": "client name",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-              }
-            },
-            "testimonial_text": {
-              "type": "StructuredText",
-              "config": {
-                "label": "testimonial_text",
-                "placeholder": "",
-                "allowTargetBlank": true,
-                "multi": "paragraph,em,strong"
-              }
-            }
-          }
-        }
-      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

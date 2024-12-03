@@ -76,46 +76,6 @@ interface HomeDocumentData {
 export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
-/**
- * Item in *Service Detail Page → Gallery*
- */
-export interface ServiceDetailPageDocumentDataGalleryItem {
-  /**
-   * gallery_item field in *Service Detail Page → Gallery*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_detail_page.gallery[].gallery_item
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  gallery_item: prismic.ImageField<never>;
-}
-
-/**
- * Item in *Service Detail Page → testimonials*
- */
-export interface ServiceDetailPageDocumentDataTestimonialsItem {
-  /**
-   * client name field in *Service Detail Page → testimonials*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_detail_page.testimonials[].client_name
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  client_name: prismic.RichTextField;
-
-  /**
-   * testimonial_text field in *Service Detail Page → testimonials*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_detail_page.testimonials[].testimonial_text
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  testimonial_text: prismic.RichTextField;
-}
-
 type ServiceDetailPageDocumentDataSlicesSlice =
   | ServiceContentSectionSlice
   | ServiceCallToActionSlice
@@ -157,43 +117,6 @@ interface ServiceDetailPageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   introduction: prismic.RichTextField;
-
-  /**
-   * service_details field in *Service Detail Page*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_detail_page.service_details
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  service_details: prismic.RichTextField;
-
-  /**
-   * Gallery field in *Service Detail Page*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_detail_page.gallery[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  gallery: prismic.GroupField<
-    Simplify<ServiceDetailPageDocumentDataGalleryItem>
-  >;
-
-  /**
-   * testimonials field in *Service Detail Page*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_detail_page.testimonials[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  testimonials: prismic.GroupField<
-    Simplify<ServiceDetailPageDocumentDataTestimonialsItem>
-  >;
 
   /**
    * Slice Zone field in *Service Detail Page*
@@ -1118,8 +1041,6 @@ declare module "@prismicio/client" {
       HomeDocumentDataSlicesSlice,
       ServiceDetailPageDocument,
       ServiceDetailPageDocumentData,
-      ServiceDetailPageDocumentDataGalleryItem,
-      ServiceDetailPageDocumentDataTestimonialsItem,
       ServiceDetailPageDocumentDataSlicesSlice,
       ServicesPageDocument,
       ServicesPageDocumentData,
