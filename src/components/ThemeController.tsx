@@ -1,42 +1,48 @@
-import React from 'react'
+'use client'
+
+import {useTheme} from 'next-themes'
+import React, {useEffect, useState} from 'react'
+import {BsSun, BsMoon, BsDisplay} from 'react-icons/bs'
+import {IoColorPaletteOutline} from 'react-icons/io5'
+
+const themeOptions = [
+  {id: 'light', label: 'Light', icon: BsSun},
+  {id: 'dark', label: 'Dark', icon: BsMoon},
+  {id: 'system', label: 'System', icon: BsDisplay},
+  {id: 'retroPastelTheme', label: 'Retro Pastel', icon: IoColorPaletteOutline},
+] as const
 
 function ThemeController() {
-    return (
-        <label className="grid cursor-pointer place-items-center">
-            <input
-                type="checkbox"
-                value="dark"
-                className="toggle theme-controller bg-base-content col-span-2 col-start-1 row-start-1" />
-            <svg
-                className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round">
-                <circle cx="12" cy="12" r="5" />
-                <path
-                    d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" />
-            </svg>
-            <svg
-                className="stroke-base-100 fill-base-100 col-start-2 row-start-1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-        </label>
-    )
+  const [mounted, setMounted] = useState(false)
+  const {theme, setTheme} = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  const CurrentIcon = themeOptions.find((t) => t.id === theme)?.icon || BsDisplay
+
+  return (
+    <div className='dropdown dropdown-end'>
+      <div tabIndex={0} role='button' className='btn btn-circle btn-ghost'>
+        <CurrentIcon className='h-5 w-5' />
+      </div>
+      <ul className='menu dropdown-content z-[1] w-52 rounded-box bg-base-200 p-2 text-base-content shadow'>
+        {themeOptions.map(({id, label, icon: Icon}) => (
+          <li key={id}>
+            <button
+              onClick={() => setTheme(id)}
+              className={`flex items-center gap-2 ${theme === id ? 'active' : ''}`}>
+              <Icon /> {label}
+              {theme === id && <span className='ml-auto'>✓</span>}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 export default ThemeController
