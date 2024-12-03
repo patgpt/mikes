@@ -31,11 +31,8 @@ export default function RootLayout({
       <body
         className={clsx(fontDisplay.variable, "antialiased", "bg-base-100", "min-h-screen")}
       >
-
         <Navbar />
-
         {children}
-
         <Footer />
       </body>
     </html>

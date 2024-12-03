@@ -6,7 +6,11 @@ import navigation from './NavigationData'
 import NavItem from './NavItem'
 import { useRef } from 'react'
 
-// Drawer component for mobile view
+/**
+ * Drawer component for mobile navigation
+ * Provides a side-drawer menu that can be toggled on mobile devices
+ * Uses daisyUI drawer component with custom styling
+ */
 const Drawer = () => {
     const drawerRef = useRef<HTMLInputElement>(null);
 
@@ -44,27 +48,34 @@ const Drawer = () => {
     );
 }
 
-// Navbar component
+/**
+ * Main navigation component
+ * Renders a responsive navbar with:
+ * - Mobile: Hamburger menu that opens a drawer
+ * - Desktop: Horizontal navigation with logo and theme controller
+ * - Supports both mobile (drawer) and desktop (horizontal) layouts
+ * Uses daisyUI navbar component with custom styling
+ */
 function Navbar() {
     return (
-        <div className="sticky z-10 top-0 left-0 navbar bg-base-100 bg-opacity-60 backdrop-blur-md backdrop-saturate-150 shadow-lg">
-            <div className="navbar-start lg:hidden">
+        <header className="sticky z-10 top-0 left-0 navbar bg-base-100 bg-opacity-60 backdrop-blur-md backdrop-saturate-150 shadow-lg">
+            <nav className="navbar-start lg:hidden">
                 <Drawer />
-            </div>
+            </nav>
             <div className="navbar-start hidden lg:flex">
                 <Logo />
             </div>
-            <div className="navbar-center hidden md:flex">
+            <nav className="navbar-center hidden md:flex">
                 {
                     navigation.map(navItem => (
                         <NavItem className="mr-4" href={navItem.href} key={navItem.href} label={navItem.label} icon={navItem.icon} />
                     ))
                 }
-            </div>
+            </nav>
             <div className="navbar-end">
                 <ThemeController />
             </div>
-        </div>
+        </header>
     )
 }
 

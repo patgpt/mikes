@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import type { IconType } from "react-icons";
 import { FaHouse, FaBriefcase, FaInfo } from "react-icons/fa6";
 
