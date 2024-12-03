@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: Promise<Params> }) {
             <PrismicNextImage
                 className="h-96 object-cover"
                 field={page.data.hero_image} />
-            <div className="container mx-auto prose prose-lg my-8">
+            <div className="container mx-auto prose prose-2xl my-8">
                 <PrismicRichText field={page.data.service_title} />
                 <PrismicRichText field={page.data.introduction} />
                 <PrismicRichText field={page.data.service_details} />

@@ -3,6 +3,9 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  frequently_asked_questions: dynamic(
+    () => import("./FrequentlyAskedQuestions"),
+  ),
   hero: dynamic(() => import("./Hero")),
   services_overview: dynamic(() => import("./ServicesOverview")),
 };

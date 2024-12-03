@@ -116,7 +116,7 @@ export interface ServiceDetailPageDocumentDataTestimonialsItem {
   testimonial_text: prismic.RichTextField;
 }
 
-type ServiceDetailPageDocumentDataSlicesSlice = never;
+type ServiceDetailPageDocumentDataSlicesSlice = FrequentlyAskedQuestionsSlice;
 
 /**
  * Content for Service Detail Page documents
@@ -402,6 +402,89 @@ export type AllDocumentTypes =
   | ServicesPageDocument;
 
 /**
+ * Item in *FrequentlyAskedQuestions → Default → Primary → FAQ's*
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultPrimaryFaqsItem {
+  /**
+   * Question field in *FrequentlyAskedQuestions → Default → Primary → FAQ's*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.faqs[].question
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  question: prismic.RichTextField;
+
+  /**
+   * Answer field in *FrequentlyAskedQuestions → Default → Primary → FAQ's*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.faqs[].answer
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  answer: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *FrequentlyAskedQuestions → Default → Primary*
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultPrimary {
+  /**
+   * Section Title field in *FrequentlyAskedQuestions → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+
+  /**
+   * FAQ's field in *FrequentlyAskedQuestions → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.default.primary.faqs[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  faqs: prismic.GroupField<
+    Simplify<FrequentlyAskedQuestionsSliceDefaultPrimaryFaqsItem>
+  >;
+}
+
+/**
+ * Default variation for FrequentlyAskedQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FrequentlyAskedQuestionsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FrequentlyAskedQuestions*
+ */
+type FrequentlyAskedQuestionsSliceVariation =
+  FrequentlyAskedQuestionsSliceDefault;
+
+/**
+ * FrequentlyAskedQuestions Shared Slice
+ *
+ * - **API ID**: `frequently_asked_questions`
+ * - **Description**: FrequentlyAskedQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSlice = prismic.SharedSlice<
+  "frequently_asked_questions",
+  FrequentlyAskedQuestionsSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -609,6 +692,11 @@ declare module "@prismicio/client" {
       ServicesPageDocumentDataServicesListItem,
       ServicesPageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      FrequentlyAskedQuestionsSlice,
+      FrequentlyAskedQuestionsSliceDefaultPrimaryFaqsItem,
+      FrequentlyAskedQuestionsSliceDefaultPrimary,
+      FrequentlyAskedQuestionsSliceVariation,
+      FrequentlyAskedQuestionsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

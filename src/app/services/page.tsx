@@ -42,11 +42,11 @@ export default async function Page() {
     return (
         <div className="container mx-auto w-full my-8">
             {/* <PrismicNextImage field={page} /> */}
-            <div className="prose prose-xl max-w-6xl">
+            <div className="prose prose-2xl max-w-6xl">
                 <PrismicRichText field={page.data.page_title} />
                 <PrismicRichText field={page.data.introduction} />
             </div>
-            <hr className="divide-solid divide-primary-content my-4" />
+            <hr className="divide-solid divide-y-2 my-8 w-1/2 divide-primary" />
 
             <ServiceGrid>
                 {page.data.services_list.map((service) => (

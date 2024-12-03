@@ -101,7 +101,11 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "frequently_asked_questions": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },
