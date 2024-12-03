@@ -772,11 +772,11 @@ export type ServiceContentSectionSliceDarkBackground =
   >;
 
 /**
- * Primary content in *ServiceContentSection → Image left - Dark → Primary*
+ * Primary content in *ServiceContentSection → Image Left Dark → Primary*
  */
 export interface ServiceContentSectionSliceImageLeftDarkPrimary {
   /**
-   * Section Title field in *ServiceContentSection → Image left - Dark → Primary*
+   * Section Title field in *ServiceContentSection → Image Left Dark → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -786,7 +786,7 @@ export interface ServiceContentSectionSliceImageLeftDarkPrimary {
   section_title: prismic.RichTextField;
 
   /**
-   * Section Content field in *ServiceContentSection → Image left - Dark → Primary*
+   * Section Content field in *ServiceContentSection → Image Left Dark → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -796,7 +796,7 @@ export interface ServiceContentSectionSliceImageLeftDarkPrimary {
   section_content: prismic.RichTextField;
 
   /**
-   * SectionImage field in *ServiceContentSection → Image left - Dark → Primary*
+   * SectionImage field in *ServiceContentSection → Image Left Dark → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -807,7 +807,7 @@ export interface ServiceContentSectionSliceImageLeftDarkPrimary {
 }
 
 /**
- * Image left - Dark variation for ServiceContentSection Slice
+ * Image Left Dark variation for ServiceContentSection Slice
  *
  * - **API ID**: `imageLeftDark`
  * - **Description**: Default
@@ -821,11 +821,11 @@ export type ServiceContentSectionSliceImageLeftDark =
   >;
 
 /**
- * Primary content in *ServiceContentSection → Image Right - Light → Primary*
+ * Primary content in *ServiceContentSection → Image Right Light → Primary*
  */
 export interface ServiceContentSectionSliceImageRightLightPrimary {
   /**
-   * Section Title field in *ServiceContentSection → Image Right - Light → Primary*
+   * Section Title field in *ServiceContentSection → Image Right Light → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -835,7 +835,7 @@ export interface ServiceContentSectionSliceImageRightLightPrimary {
   section_title: prismic.RichTextField;
 
   /**
-   * Section Content field in *ServiceContentSection → Image Right - Light → Primary*
+   * Section Content field in *ServiceContentSection → Image Right Light → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -845,7 +845,7 @@ export interface ServiceContentSectionSliceImageRightLightPrimary {
   section_content: prismic.RichTextField;
 
   /**
-   * SectionImage field in *ServiceContentSection → Image Right - Light → Primary*
+   * SectionImage field in *ServiceContentSection → Image Right Light → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
@@ -856,7 +856,7 @@ export interface ServiceContentSectionSliceImageRightLightPrimary {
 }
 
 /**
- * Image Right - Light variation for ServiceContentSection Slice
+ * Image Right Light variation for ServiceContentSection Slice
  *
  * - **API ID**: `imageRightLight`
  * - **Description**: Default
@@ -870,13 +870,113 @@ export type ServiceContentSectionSliceImageRightLight =
   >;
 
 /**
+ * Primary content in *ServiceContentSection → Image Right Dark → Primary*
+ */
+export interface ServiceContentSectionSliceImageRightDarkPrimary {
+  /**
+   * Section Title field in *ServiceContentSection → Image Right Dark → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageRightDark.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+
+  /**
+   * Section Content field in *ServiceContentSection → Image Right Dark → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageRightDark.primary.section_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_content: prismic.RichTextField;
+
+  /**
+   * SectionImage field in *ServiceContentSection → Image Right Dark → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageRightDark.primary.sectionimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  sectionimage: prismic.ImageField<never>;
+}
+
+/**
+ * Image Right Dark variation for ServiceContentSection Slice
+ *
+ * - **API ID**: `imageRightDark`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceContentSectionSliceImageRightDark =
+  prismic.SharedSliceVariation<
+    "imageRightDark",
+    Simplify<ServiceContentSectionSliceImageRightDarkPrimary>,
+    never
+  >;
+
+/**
+ * Primary content in *ServiceContentSection → Image Left Light → Primary*
+ */
+export interface ServiceContentSectionSliceImageLeftLightPrimary {
+  /**
+   * Section Title field in *ServiceContentSection → Image Left Light → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageLeftLight.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_title: prismic.RichTextField;
+
+  /**
+   * Section Content field in *ServiceContentSection → Image Left Light → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageLeftLight.primary.section_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  section_content: prismic.RichTextField;
+
+  /**
+   * SectionImage field in *ServiceContentSection → Image Left Light → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_content_section.imageLeftLight.primary.sectionimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  sectionimage: prismic.ImageField<never>;
+}
+
+/**
+ * Image Left Light variation for ServiceContentSection Slice
+ *
+ * - **API ID**: `imageLeftLight`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServiceContentSectionSliceImageLeftLight =
+  prismic.SharedSliceVariation<
+    "imageLeftLight",
+    Simplify<ServiceContentSectionSliceImageLeftLightPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *ServiceContentSection*
  */
 type ServiceContentSectionSliceVariation =
   | ServiceContentSectionSliceDefault
   | ServiceContentSectionSliceDarkBackground
   | ServiceContentSectionSliceImageLeftDark
-  | ServiceContentSectionSliceImageRightLight;
+  | ServiceContentSectionSliceImageRightLight
+  | ServiceContentSectionSliceImageRightDark
+  | ServiceContentSectionSliceImageLeftLight;
 
 /**
  * ServiceContentSection Shared Slice
@@ -1044,11 +1144,15 @@ declare module "@prismicio/client" {
       ServiceContentSectionSliceDarkBackgroundPrimary,
       ServiceContentSectionSliceImageLeftDarkPrimary,
       ServiceContentSectionSliceImageRightLightPrimary,
+      ServiceContentSectionSliceImageRightDarkPrimary,
+      ServiceContentSectionSliceImageLeftLightPrimary,
       ServiceContentSectionSliceVariation,
       ServiceContentSectionSliceDefault,
       ServiceContentSectionSliceDarkBackground,
       ServiceContentSectionSliceImageLeftDark,
       ServiceContentSectionSliceImageRightLight,
+      ServiceContentSectionSliceImageRightDark,
+      ServiceContentSectionSliceImageLeftLight,
       ServicesOverviewSlice,
       ServicesOverviewSliceDefaultPrimaryServicesItem,
       ServicesOverviewSliceDefaultPrimary,
