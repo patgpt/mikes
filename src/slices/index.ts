@@ -7,5 +7,7 @@ export const components = {
     () => import("./FrequentlyAskedQuestions"),
   ),
   hero: dynamic(() => import("./Hero")),
+  service_call_to_action: dynamic(() => import("./ServiceCallToAction")),
+  service_content_section: dynamic(() => import("./ServiceContentSection")),
   services_overview: dynamic(() => import("./ServicesOverview")),
 };

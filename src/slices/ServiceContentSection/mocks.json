@@ -1,0 +1,225 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Everyone"
+						}
+					}
+				]
+			},
+			"section_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aute et nisi fugiat consectetur aute. Quis consectetur dolor culpa magna consequat."
+						}
+					}
+				]
+			},
+			"sectionimage": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+					"width": 3168,
+					"height": 4752
+				},
+				"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?rect=0%2C792%2C3168%2C3168&w=400&h=400",
+				"width": 400,
+				"height": 400,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 792
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "darkBackground",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Express"
+						}
+					}
+				]
+			},
+			"section_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat officia esse cupidatat id elit minim et ex sunt do ullamco voluptate dolor adipisicing. Veniam culpa fugiat qui irure labore non deserunt amet anim ullamco sunt elit in cupidatat enim. Adipisicing exercitation ut incididunt nisi dolore quis aliquip."
+						}
+					}
+				]
+			},
+			"sectionimage": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+					"width": 6000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e?rect=1000%2C0%2C4000%2C4000&w=400&h=400",
+				"width": 400,
+				"height": 400,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 1000,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "imageLeftDark",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Spoken"
+						}
+					}
+				]
+			},
+			"section_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi sunt irure ut esse culpa aute eiusmod minim amet nisi aute laboris elit ut."
+						}
+					}
+				]
+			},
+			"sectionimage": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04",
+					"width": 4000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1606248897732-2c5ffe759c04?rect=0%2C0%2C4000%2C4000&w=400&h=400",
+				"width": 400,
+				"height": 400,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "imageRightLight",
+		"primary": {
+			"section_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Attached"
+						}
+					}
+				]
+			},
+			"section_content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Exercitation id deserunt aute."
+						}
+					}
+				]
+			},
+			"sectionimage": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a",
+					"width": 3024,
+					"height": 3778
+				},
+				"url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?rect=0%2C377%2C3024%2C3024&w=400&h=400",
+				"width": 400,
+				"height": 400,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 377
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	}
+]
