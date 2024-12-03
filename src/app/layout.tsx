@@ -3,18 +3,9 @@ import Navbar from "@/components/navigation/Navbar";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import { Lobster } from "next/font/google";
-import localFont from "next/font/local";
+
 import "./globals.css";
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 
 const fontDisplay = Lobster({
   variable: "--font-display",
@@ -38,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={clsx(geistSans.variable, geistMono.variable, fontDisplay.variable, "antialiased", "bg-base-100", "min-h-screen")}
+        className={clsx(fontDisplay.variable, "antialiased", "bg-base-100", "min-h-screen")}
       >
 
         <Navbar />
