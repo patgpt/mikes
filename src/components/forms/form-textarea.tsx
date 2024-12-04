@@ -5,9 +5,10 @@ type FormTextareaProps = {
   required?: boolean
   error?: string;
   onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  disabled?: boolean;
 }
 
-export default function FormTextarea({label, rows = 4, required, error, ...props}: FormTextareaProps) {
+export default function FormTextarea({label, rows = 4, required, error, disabled, ...props}: FormTextareaProps) {
   const id = `textarea-${props.name}`
   return (
     <div className='form-control'>
@@ -21,6 +22,7 @@ export default function FormTextarea({label, rows = 4, required, error, ...props
         aria-required={required}
         aria-label={label}
         aria-invalid={!!error}
+        disabled={disabled}
         {...props}
       />
       {error && (

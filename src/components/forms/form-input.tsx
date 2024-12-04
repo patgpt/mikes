@@ -4,10 +4,11 @@ type FormInputProps = {
   type?: 'text' | 'email'
   required?: boolean
   error?: string;
+  disabled?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function FormInput({ label, required, error, ...props }: FormInputProps) {
+export default function FormInput({ label, required, error, disabled, ...props }: FormInputProps) {
   const id = `input-${props.name}`
   return (
     <div className='form-control'>
@@ -20,6 +21,7 @@ export default function FormInput({ label, required, error, ...props }: FormInpu
         aria-required={required}
         aria-label={label}
         aria-invalid={!!error}
+        disabled={disabled}
         {...props}
       />
       {error && (
