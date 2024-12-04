@@ -1,7 +1,7 @@
 import {Metadata} from 'next'
 import {notFound} from 'next/navigation'
 import {PrismicRichText, SliceZone} from '@prismicio/react'
-import ParallaxContainer from '@/components/ParallaxContainer'
+import ParallaxContainer from '@/components/layout/ParallaxContainer'
 
 import {createClient} from '@/prismicio'
 import {components} from '@/slices'

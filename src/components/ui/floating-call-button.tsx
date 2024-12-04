@@ -48,6 +48,7 @@ export default function FloatingCallButton() {
             initial={{opacity: 0, y: 50, scale: 0.3}}
             animate={{opacity: 1, y: 0, scale: 1}}
             exit={{opacity: 0, y: 50, scale: 0.3}}
+            transition={{type: 'spring', stiffness: 260, damping: 20}}
             className='mb-4'
             role='dialog'
             aria-label='Call options'>
@@ -59,15 +60,16 @@ export default function FloatingCallButton() {
       <div className='tooltip tooltip-left' data-tip='Click to call us'>
         <motion.button
           ref={buttonRef}
-          className='btn btn-circle btn-primary'
+          className={`btn btn-circle btn-primary ${!isOpen ? 'animate-pulse' : ''}`}
           whileTap={{scale: 0.9}}
           whileHover={{scale: 1.1}}
+          transition={{type: 'spring', stiffness: 400, damping: 17}}
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-haspopup='dialog'
           aria-label='Open call options'>
           <FaPhone
-            className={`h-6 w-6 transition-transform ${isOpen ? 'rotate-45' : ''}`}
+            className={`h-6 w-6 transition-transform duration-300 ${isOpen ? 'rotate-45' : ''}`}
             aria-hidden='true'
           />
         </motion.button>

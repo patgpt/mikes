@@ -1,4 +1,4 @@
-import Footer from '@/components/Footer'
+import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/navigation/Navbar'
 import clsx from 'clsx'
 import type {Metadata} from 'next'
@@ -6,6 +6,7 @@ import {Providers} from './providers'
 
 import './globals.css'
 import {fontSans, fontSerif, fontDisplay} from '@/app/fonts'
+import FloatingCallButton from '@/components/ui/floating-call-button'
 
 export const metadata: Metadata = {
   title: 'Mike Kelly',
@@ -31,6 +32,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <FloatingCallButton />
           <Footer />
         </Providers>
       </body>
