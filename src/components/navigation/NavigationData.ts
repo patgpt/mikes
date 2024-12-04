@@ -1,6 +1,6 @@
 'use client'
 import type {IconType} from 'react-icons'
-import {FaHouse, FaBriefcase, FaInfo, FaVoicemail, FaMessage} from 'react-icons/fa6'
+import {FaHouse, FaBriefcase, FaInfo, FaMessage} from 'react-icons/fa6'
 
 export type NavigationItem = {
   href: string
