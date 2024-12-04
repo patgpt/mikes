@@ -2,6 +2,7 @@
 
 import {Logger} from '@/lib/logger'
 import {z} from 'zod'
+import { rateLimit } from '@/lib/rate-limit'
 
 const schema = z.object({
   name: z
@@ -19,9 +20,20 @@ const schema = z.object({
 })
 
 type FormData = z.infer<typeof schema>
-type State = {error?: string; success?: string} | null
+type State = {error?: string; success?: string; remaining?: number} | null
 
 export async function getMike(prevState: State, formData: FormData) {
+  // Rate limiting
+  const identifier = formData.email // Use email as identifier
+  const { isLimited, remaining } = await rateLimit(identifier)
+
+  if (isLimited) {
+    return {
+      error: 'Too many requests. Please try again tomorrow.',
+      remaining: 0
+    }
+  }
+
   const validatedFields = schema.safeParse({
     name: formData.name,
     email: formData.email,
@@ -43,7 +55,7 @@ export async function getMike(prevState: State, formData: FormData) {
       name: sanitizedData.name,
     })
     await new Promise((resolve) => setTimeout(resolve, 1000))
-    return {success: 'Message sent successfully!'}
+    return {success: 'Message sent successfully!', remaining}
   } catch (error) {
     Logger.error('Failed to send message', error as Error)
     return {error: 'Failed to send message'}

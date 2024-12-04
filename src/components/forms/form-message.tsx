@@ -1,9 +1,10 @@
 type FormMessageProps = {
   error?: string
   success?: string
+  remaining?: number
 }
 
-export default function FormMessage({ error, success }: FormMessageProps) {
+export default function FormMessage({ error, success, remaining }: FormMessageProps) {
   if (!error && !success) return null
 
   return (
@@ -24,6 +25,11 @@ export default function FormMessage({ error, success }: FormMessageProps) {
           aria-live="polite"
         >
           {success}
+          {remaining !== undefined && (
+            <small className="block mt-1">
+              {remaining} submissions remaining today
+            </small>
+          )}
         </div>
       )}
     </>

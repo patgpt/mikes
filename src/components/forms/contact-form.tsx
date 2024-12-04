@@ -31,7 +31,11 @@ export default function ContactForm() {
     <>
       <Form action={handleFormAction} className='card w-96 bg-base-100 p-6 shadow-xl'>
         <h2 className='prose prose-2xl card-title mb-4'>Get Mike</h2>
-        <FormMessage error={state?.error} success={state?.success} />
+        <FormMessage
+          error={state?.error}
+          success={state?.success}
+          remaining={state?.remaining}
+        />
         <FormInput
           label='Name'
           name='name'
