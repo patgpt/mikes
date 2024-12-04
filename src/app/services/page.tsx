@@ -9,7 +9,7 @@ import type {
   ServicesPageDocumentDataServicesListItem,
   Simplify,
 } from '../../../prismicio-types'
-import type {ReactNode} from 'react'
+    
 import Grid from '@/components/layout/Grid'
 
 const ServiceCard = (service: Simplify<ServicesPageDocumentDataServicesListItem>) => (
