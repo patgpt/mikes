@@ -1,30 +1,35 @@
-"use client";
-import type { IconType } from "react-icons";
-import { FaHouse, FaBriefcase, FaInfo } from "react-icons/fa6";
+'use client'
+import type {IconType} from 'react-icons'
+import {FaHouse, FaBriefcase, FaInfo, FaVoicemail, FaMessage} from 'react-icons/fa6'
 
 export type NavigationItem = {
-  href: string;
-  label: string;
-  icon: IconType;
-};
+  href: string
+  label: string
+  icon: IconType
+}
 
 // Navigation items
 const navigation: NavigationItem[] = [
   {
-    href: "/",
-    label: "Home",
+    href: '/',
+    label: 'Home',
     icon: FaHouse,
   },
   {
-    href: "/about",
-    label: "About",
+    href: '/about',
+    label: 'About',
     icon: FaInfo,
   },
   {
-    href: "/services",
-    label: "Services",
+    href: '/services',
+    label: 'Services',
     icon: FaBriefcase,
   },
-];
+  {
+    href: '/get-mike',
+    label: 'Contact',
+    icon: FaMessage,
+  },
+]
 
-export default navigation;
+export default navigation
