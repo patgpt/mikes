@@ -38,20 +38,20 @@ export default function ContactForm() {
       {state?.error && (
         <Toast
           message={state.error}
-          type="error"
+          type='error'
           remaining={state.remaining}
-          position="bottom-left"
+          position='bottom-left'
         />
       )}
       {state?.success && (
         <Toast
           message={state.success}
-          type="success"
+          type='success'
           remaining={state.remaining}
-          position="bottom-right"
+          position='bottom-right'
         />
       )}
-      <Form action={handleFormAction} className='card w-96 bg-base-100 p-6 shadow-xl'>
+      <Form action={handleFormAction} className='card mx-auto w-96 bg-base-100 p-6 shadow-xl'>
         <h2 className='prose prose-2xl card-title mb-4'>Get Mike</h2>
         <FormInput
           label='Name'

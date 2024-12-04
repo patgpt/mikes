@@ -1,13 +1,19 @@
- 
 import ContactForm from '@/components/forms/contact-form'
+import {Container} from '@/components/layout/Container'
+import Divider from '@/components/layout/Divider'
+import PageTitle from '@/components/layout/PageTitle'
 
 function Page() {
-
-
   return (
-    <div className='bg-base container prose prose-2xl mx-auto flex min-h-screen items-center justify-center text-base-content'>
+    <Container maxWidth='2xl'>
+      <PageTitle>Get Mike</PageTitle>
+      <h3 className='prose prose-xl mb-4 max-w-none text-balance text-center text-base-content'>
+        Want to get in touch? Fill out the form below and I&apos;ll get back to you as soon as I
+        can.
+      </h3>
+      <Divider />
       <ContactForm />
-    </div>
+    </Container>
   )
 }
 

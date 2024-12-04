@@ -23,8 +23,8 @@ export default async function Page({params}: {params: Promise<Params>}) {
             field={page.data.hero_image}
             priority
           />
-          <div className='absolute inset-0 flex items-center justify-center bg-black/40'>
-            <div className='container prose prose-2xl prose-invert text-primary'>
+          <div className='absolute inset-0 flex items-center justify-center bg-black/50'>
+            <div className='container text-6xl text-accent'>
               <PrismicRichText field={page.data.service_title} />
             </div>
           </div>
