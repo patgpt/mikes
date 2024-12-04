@@ -1,7 +1,7 @@
 "use client"
 import { FaList } from 'react-icons/fa6'
 import Logo from '../Logo'
-import ThemeController from '../ThemeController'
+import ThemeController from '../ui/ThemeController'
 import navigation from './NavigationData'
 import NavItem from './NavItem'
 import { useRef } from 'react'

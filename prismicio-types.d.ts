@@ -535,36 +535,6 @@ export interface ServiceCallToActionSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   link: prismic.LinkField;
-
-  /**
-   * Alignment field in *ServiceCallToAction → Default → Primary*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_call_to_action.default.primary.alignment
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  alignment: prismic.SelectField<"Left" | "Right" | "Center">;
-
-  /**
-   * Background Image field in *ServiceCallToAction → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_call_to_action.default.primary.background_image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  background_image: prismic.ImageField<never>;
-
-  /**
-   * Background Color field in *ServiceCallToAction → Default → Primary*
-   *
-   * - **Field Type**: Color
-   * - **Placeholder**: *None*
-   * - **API ID Path**: service_call_to_action.default.primary.background_color
-   * - **Documentation**: https://prismic.io/docs/field#color
-   */
-  background_color: prismic.ColorField;
 }
 
 /**
@@ -914,6 +884,71 @@ export type ServiceContentSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ServicesCallout → Default → Primary*
+ */
+export interface ServicesCalloutSliceDefaultPrimary {
+  /**
+   * Callout Text field in *ServicesCallout → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_callout.default.primary.callout_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  callout_text: prismic.RichTextField;
+
+  /**
+   * Call To Action field in *ServicesCallout → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_callout.default.primary.call_to_action
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  call_to_action: prismic.RichTextField;
+
+  /**
+   * Link field in *ServicesCallout → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services_callout.default.primary.link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for ServicesCallout Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesCalloutSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesCalloutSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServicesCallout*
+ */
+type ServicesCalloutSliceVariation = ServicesCalloutSliceDefault;
+
+/**
+ * ServicesCallout Shared Slice
+ *
+ * - **API ID**: `services_callout`
+ * - **Description**: ServicesCallout
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesCalloutSlice = prismic.SharedSlice<
+  "services_callout",
+  ServicesCalloutSliceVariation
+>;
+
+/**
  * Item in *ServicesOverview → Default → Primary → Services*
  */
 export interface ServicesOverviewSliceDefaultPrimaryServicesItem {
@@ -1074,6 +1109,10 @@ declare module "@prismicio/client" {
       ServiceContentSectionSliceImageRightLight,
       ServiceContentSectionSliceImageRightDark,
       ServiceContentSectionSliceImageLeftLight,
+      ServicesCalloutSlice,
+      ServicesCalloutSliceDefaultPrimary,
+      ServicesCalloutSliceVariation,
+      ServicesCalloutSliceDefault,
       ServicesOverviewSlice,
       ServicesOverviewSliceDefaultPrimaryServicesItem,
       ServicesOverviewSliceDefaultPrimary,
